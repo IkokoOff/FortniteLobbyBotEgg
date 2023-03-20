@@ -1,6 +1,6 @@
 { pkgs }: {
     deps = [
-        pkgs.python39Packages.poetry
-        pkgs.python39Full
+         pkgs.otherPackages
+         pkgs.replitPackages.prybar-python39
     ];
 }
