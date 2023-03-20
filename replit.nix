@@ -1,6 +1,6 @@
 { pkgs }: {
     deps = [
          pkgs.python39Packages.poetry
-         pkgs.python39
+         pkgs.python39Full
     ];
 }
