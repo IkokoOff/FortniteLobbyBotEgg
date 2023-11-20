@@ -5,7 +5,7 @@ description = ""
 authors = ["gomashio", "pdf114514"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 colorama = "^0.4.6"
 "discord.py" = "^2.3.2"
 jaconv = "^0.3.4"
