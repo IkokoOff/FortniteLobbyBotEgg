@@ -1,7 +1,4 @@
 function getWsAddr() {
-    if (location.protocol == 'https:') {
-        return ("wss://" + location.host + location.pathname + "/ws")
-    } else {
-        return ("ws://" + location.host + location.pathname + "/ws")
-    }
+    const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
+    return `${protocol}${window.location.host}${window.location.pathname}/ws`;
 }

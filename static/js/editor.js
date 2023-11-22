@@ -44,7 +44,6 @@ function saveVisual(reload = false) {
     request.send(formData);
     request.onload = function (ev) {
         const data = JSON.parse(request.responseText);
-        console.log(data);
         const res = document.getElementById('res');
         res.style.color = data.color;
         res.style.transform = 'translateX(-50%) translateY(0%)';
@@ -60,44 +59,8 @@ function saveVisual(reload = false) {
 
         for (let [key, value] of Object.entries(data.flat_data)) {
             const valueElement = document.getElementById(key);
-            if (valueElement) {
-                if (valueElement.tagName == 'INPUT' || valueElement.tagName == 'TEXTAREA') {
-                    valueElement.value = value;
-                } else {
-                    Array.from(valueElement.children).forEach(select => {
-                        if (value === null) {
-                            if (select.value == 'null') {
-                                select.selected = true;
-                            }
-                        } else if (typeof(value) === Boolean) {
-                            if (select.value == value.toString()) {
-                                select.selected = true;
-                            }
-                        } else {
-                            if (select.value == value) {
-                                select.selected = true;
-                            }
-                        }
-                    });
-                }
-                valueElement.style.color = null;
-
-                const label = valueElement.previousElementSibling;
-                if (label) {
-                    label.style.color = null;
-                }
-
-                if (key.indexOf("['clients']") != -1) {
-                    const h1 = valueElement.parentElement.parentElement.firstElementChild;
-                    if (h1) {
-                        h1.style.color = null;
-                    }
-    
-                    const client = h1.parentElement.parentElement.firstElementChild;
-                    if (client) {
-                        client.style.color = null;
-                    }
-                }
+            if (valueElement !== null) {
+                valueElement.value = value;
             }
         }
 
@@ -109,31 +72,19 @@ function saveVisual(reload = false) {
             }, 400);
         }
         for (let key of data.errors) {
+            const label = document.getElementById('label_' + key);
+            if (label !== null) {
+                label.style.color = '#F04747';
+            }
             const valueElement = document.getElementById(key);
-            if (valueElement) {
+            if (valueElement !== null) {
                 valueElement.style.backgroundColor = '#F04747';
                 valueElement.ontransitionend = function() {
                     setTimeout(function () {
-                        if (valueElement) {
+                        if (valueElement !== null) {
                             valueElement.style.backgroundColor = '';
                         }
                     }, 700);
-                }
-            }
-            const label = valueElement.previousElementSibling;
-            if (label) {
-                label.style.color = '#F04747';
-            }
-
-            if (key.indexOf("['clients']") != -1) {
-                const h1 = valueElement.parentElement.parentElement.firstElementChild;
-                if (h1) {
-                    h1.style.color = '#F04747';
-                }
-
-                const client = h1.parentElement.parentElement.firstElementChild;
-                if (client) {
-                    client.style.color = '#F04747';
                 }
             }
         }
@@ -149,7 +100,6 @@ function saveRaw(reload = false) {
             request.open('POST', location.pathname + '/save-raw');
         }
         request.setRequestHeader('Content-Type', 'application/json');
-        console.log(JSON.parse(editor.getValue()));
         request.send(JSON.stringify(JSON.parse(editor.getValue())));
         request.onload = function (ev) {
             const data = JSON.parse(request.responseText);
@@ -188,13 +138,13 @@ function saveRaw(reload = false) {
                 const valueElement = document.getElementById(key);
                 if (valueElement !== null) {
                     valueElement.style.backgroundColor = '#F04747';
-                }
-                valueElement.ontransitionend = function() {
-                    setTimeout(function () {
-                        if (valueElement !== null) {
-                            valueElement.style.backgroundColor = '';
-                        }
-                    }, 700);
+                    valueElement.ontransitionend = function() {
+                        setTimeout(function () {
+                            if (valueElement !== null) {
+                                valueElement.style.backgroundColor = '';
+                            }
+                        }, 700);
+                    }
                 }
             }
         }
@@ -219,7 +169,6 @@ function saveRaw(reload = false) {
         return (false);
     }
 }
-
 
 function replaceAttr(element, attr, before, after) {
     element.setAttribute(attr, element.getAttribute(attr).replace(before, after));
@@ -272,7 +221,6 @@ function fixId(items, id_before, id_after) {
         }
     });
 }
-
 
 function removeListList(element) {
     element.parentNode.parentNode.removeChild(element.parentNode.nextElementSibling);
@@ -443,12 +391,10 @@ function copy(element) {
 }
 
 function paste(element, prefix) {
-    // prefix = "['clients']"
-    // id_prefix = clients
     const id_prefix = element.parentElement.parentElement.getAttribute('id');
     if (copied_element) {
-        const parent = element.parentElement.parentElement;  // clients
-        const next_element = element.parentElement.nextElementSibling.nextElementSibling;  // next client
+        const parent = element.parentElement.parentElement;
+        const next_element = element.parentElement.nextElementSibling.nextElementSibling;
         const element_num = parseInt(element.parentElement.getAttribute('num'));
         const copied_element_num = parseInt(copied_element.getAttribute('num'));
         const element_open = element.parentElement.classList.contains('open');
@@ -458,9 +404,9 @@ function paste(element, prefix) {
 
         const child = copied_element.cloneNode(true);
         child.id = `${id_prefix}_${element_num}`;
-        const id_before = `${prefix}[${copied_element_num}]`
-        const id_after = `${prefix}[${element_num}]`
-        
+        const id_before = `${prefix}[${copied_element_num}]`;
+        const id_after = `${prefix}[${element_num}]`;
+
         const request = new XMLHttpRequest();
         request.open('POST', '/l');
         request.setRequestHeader('Content-Type', 'application/json');
@@ -560,20 +506,21 @@ function OpenReadme(lang, name, key) {
         }
     }
 
+    let filename;
     if (location.pathname == '/config-editor') {
         filename = 'config';
-    } else if (location.pathname == '/commands-editor')  {
+    } else if (location.pathname == '/commands-editor') {
         filename = 'commands';
-    } else if (location.pathname == '/custom-commands-editor')  {
+    } else if (location.pathname == '/custom-commands-editor') {
         filename = 'custom_commands';
-    } else if (location.pathname == '/replies-editor')  {
+    } else if (location.pathname == '/replies-editor') {
         filename = 'replies';
     } else {
         filename = 'config';
     }
 
     open('/docs/' + lang + '/' + filename + '.md', 'readme');
-    setTimeout(function() {
+    setTimeout(function () {
         open('/docs/' + lang + '/' + filename + '.md#' + name + '-' + key, 'readme');
     }, 150);
 }

@@ -7,16 +7,17 @@ const HREFS = [
     '/boot-switch',
     '/clients-viewer'
 ];
+
 const headerList = document.getElementById('header-list');
 headerList.classList.add('pc-header-list');
 
 HREFS.forEach(href => {
     const li = document.createElement('li');
     li.className = 'header-item';
-    console.log(location.pathname);
+
     if (href == location.pathname) {
         const p = document.createElement('p');
-        p.textContent = texts[href]
+        p.textContent = texts[href];
         li.appendChild(p);
     } else {
         const a = document.createElement('a');
@@ -24,36 +25,29 @@ HREFS.forEach(href => {
         a.textContent = texts[href];
         li.appendChild(a);
     }
+
     headerList.appendChild(li);
 });
 
-document.getElementById('header-button').addEventListener('click', function() {
-    document.getElementById('header-button').classList.toggle('header-button-open');
-    document.getElementById('header-list').classList.toggle('header-list-open');
-})
+document.getElementById('header-button').addEventListener('click', function () {
+    this.classList.toggle('header-button-open');
+    headerList.classList.toggle('header-list-open');
+});
 
 const logo = document.getElementById('pc-logo');
-const header = document.getElementById('header-list');
 const headerButton = document.getElementById('header-button');
 
-function fitSize(){
-    header.classList.add('pc-header-list');
-    header.classList.remove('phone-header-list');
-    if ((logo.clientWidth + header.clientWidth) > (window.innerWidth - 20)) {
-        header.classList.add('phone-header-list');
-        header.classList.remove('pc-header-list');
-        headerButton.classList.add('header-button');
-    } else {
-        header.classList.add('pc-header-list');
-        header.classList.remove('phone-header-list');
-        headerButton.classList.remove('header-button');
-        header.classList.remove('header-list-open');
-        headerButton.classList.remove('header-button-open')
-    }
+function fitSize() {
+    const headerWidth = logo.clientWidth + headerList.clientWidth;
+    const windowWidth = window.innerWidth - 20;
+
+    headerList.classList.toggle('phone-header-list', headerWidth > windowWidth);
+    headerList.classList.toggle('pc-header-list', headerWidth <= windowWidth);
+    headerButton.classList.toggle('header-button', headerWidth > windowWidth);
+    headerButton.classList.remove('header-button-open');
+    headerList.classList.remove('header-list-open');
 }
 
 fitSize();
 
-document.body.onresize = function () {
-    fitSize();
-}
+window.addEventListener('resize', fitSize);

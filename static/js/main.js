@@ -1,25 +1,21 @@
-// https://www.7-16.co.jp/laboratory/2047
-function pseudo(id, css) {
-    id = id + '-pseudoStyle';
-    var element = document.getElementById(id);
-    if (element == null) {
-        styleTag = document.createElement('style');
-        styleTag.id = id;
-        styleTag.innerHTML = css;
-        document.getElementsByTagName('head')[0].appendChild(styleTag);
-    } else {
-        element.innerHTML = css;
+// Función para aplicar o actualizar pseudo-estilos
+function applyPseudoStyle(id, css) {
+    const styleId = id + '-pseudoStyle';
+    let styleElement = document.getElementById(styleId);
+
+    if (!styleElement) {
+        styleElement = document.createElement('style');
+        styleElement.id = styleId;
+        document.head.appendChild(styleElement);
     }
+
+    styleElement.innerHTML = css;
 }
 
-function hasCSS(id, css) {
-    id = id + '-pseudoStyle';
-    var element = document.getElementById(id);
-    if (element == null) {
-        styleTag = document.createElement('style');
-        styleTag.id = id;
-        return styleTag.innerHTML == css;
-    } else {
-        return element.innerHTML == css;
-    }
+// Función para verificar si un pseudo-estilo existe con el mismo contenido CSS
+function hasSameCSS(id, css) {
+    const styleId = id + '-pseudoStyle';
+    const styleElement = document.getElementById(styleId);
+
+    return styleElement !== null && styleElement.innerHTML === css;
 }
