@@ -3009,6 +3009,7 @@ class Client(fortnitepy.Client):
 
         if (member.id == self.user.id and self.get_config_item_path(self.config['fortnite']['emote']) is not None
                 and self.emote is None and self.emote_section is None):
+            await asyncio.sleep(1)
             await self.party.me.change_asset(
                 'AthenaDance',
                 self.get_config_item_path(self.config['fortnite']['emote']),
