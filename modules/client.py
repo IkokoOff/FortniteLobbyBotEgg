@@ -332,10 +332,6 @@ class MyClientParty(fortnitepy.ClientParty):
             }
 
         status = text or self.client.status
-        kairos_profile = self.client.avatar.to_dict()
-        kairos_profile['avatar'] = kairos_profile['avatar'].format(
-            bot=self.me.outfit
-        )
 
         try:
             status  = self.client.eval_format(
@@ -353,7 +349,6 @@ class MyClientParty(fortnitepy.ClientParty):
             'SessionId': '',
             'ProductName': 'Fortnite',
             'Properties': {
-                'KairosProfile_j': kairos_profile,
                 'party.joininfodata.286331153_j': join_data,
                 'FortBasicInfo_j': {
                     'homeBaseRating': 1,
