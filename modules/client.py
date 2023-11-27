@@ -146,15 +146,6 @@ class MyClientPartyMember(fortnitepy.ClientPartyMember):
             keys = ['run_for', 'section']
             for key in keys:
                 kwargs.pop(key, None)
-            if self.client.config['fortnite']['avatar_id'] == '{bot}':
-                self.client.set_avatar(fortnitepy.Avatar(
-                    asset=asset.split('/')[-1].split('.')[0],
-                    background_colors=(
-                        self.client.avatar.background_colors
-                        if self.client.avatar is not None else
-                        None
-                    )
-                ))
             if keep:
                 await self.edit_and_keep(
                     partial(func, asset=asset, **kwargs)
