@@ -405,7 +405,6 @@ class Bot:
             "['fortnite']['party']['playlist']": [str],
             "['fortnite']['party']['disable_voice_chat']": [bool, 'select_bool'],
             "['fortnite']['avatar_id']": [str, 'can_be_none'],
-            "['fortnite']['avatar_color']": [str, 'can_be_multiple', 'lambda x: x and (len(x.split(",")) >= 3) if "," in x else (getattr(fortnitepy.KairosBackgroundColorPreset, x.upper(), None) is not None)'],  # noqa
             "['fortnite']['banner_id']": [str],
             "['fortnite']['banner_color']": [str],
             "['fortnite']['level']": [int],
@@ -2744,13 +2743,6 @@ class Bot:
                         name=f'ClientPartyMember.set_{conf}'
                     )
                     member_meta.append(coro)
-
-                avatar = fortnitepy.kairos.get_random_default_avatar()
-                background_colors = (
-                    config['fortnite']['avatar_color'].split(',')
-                    if ',' in config['fortnite']['avatar_color'] else
-                    getattr(fortnitepy.KairosBackgroundColorPreset, config['fortnite']['avatar_color'].upper())
-                )
 
                 auth = None
                 if self.use_device_auth and device_auth_details:
