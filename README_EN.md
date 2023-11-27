@@ -1,3 +1,5 @@
+## THE FIX FOR THE COSMETIC CHANGES IS PRIVATE; IT'S THE ONLY THING NOT INCLUDED HERE
+
 # Fortnite-LobbyBot-v2
 [![Python version](https://img.shields.io/badge/3.7-blue)](https://www.python.org/downloads/release/python-379/)  
 [![Support server](https://discordapp.com/api/guilds/718709023427526697/widget.png?style=banner2)](https://discord.gg/NEnka5N)
