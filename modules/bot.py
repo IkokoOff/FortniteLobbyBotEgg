@@ -404,7 +404,6 @@ class Bot:
             "['fortnite']['party']['allow_swap']": [bool, 'select_bool'],
             "['fortnite']['party']['playlist']": [str],
             "['fortnite']['party']['disable_voice_chat']": [bool, 'select_bool'],
-            "['fortnite']['avatar_id']": [str, 'can_be_none'],
             "['fortnite']['banner_id']": [str],
             "['fortnite']['banner_color']": [str],
             "['fortnite']['level']": [int],
