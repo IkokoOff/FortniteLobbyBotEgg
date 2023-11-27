@@ -2760,17 +2760,6 @@ class Bot:
                     config,
                     num,
                     auth=auth,
-                    avatar=fortnitepy.Avatar(
-                        asset=(
-                            config['fortnite']['avatar_id']
-                            or avatar.asset
-                        ),
-                        background_colors=(
-                            background_colors
-                            if config['fortnite']['avatar_color'] else
-                            avatar.background_colors
-                        )
-                    ),
                     status=config['fortnite']['status'],
                     platform=config['fortnite']['platform'],
                     wait_for_member_meta_in_events=False,
