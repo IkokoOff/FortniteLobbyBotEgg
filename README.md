@@ -1,8 +1,8 @@
 ## THE FIX FOR THE COSMETIC CHANGES IS PRIVATE; IT'S THE ONLY THING NOT INCLUDED HERE.
 
-# Fortnite-LobbyBot-v2
-[![Pythonバージョン](https://img.shields.io/badge/3.7-blue)](https://www.python.org/downloads/release/python-379/)  
-[![サポートサーバー](https://discordapp.com/api/guilds/718709023427526697/widget.png?style=banner2)](https://discord.gg/NEnka5N)
+# Fortnite LobbyBot Egg
+[![Pythonバージョン](https://img.shields.io/badge/3.9-blue)](https://www.python.org/downloads/release/python-3913/)  
+[![サポートサーバー](https://discordapp.com/api/guilds/926816871989252157/widget.png?style=banner2)](https://discord.gg/NEnka5N](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157))
 
 English version of README is [Here](README_EN.md)  
 La versión en español de README está [aquí](README_ES.md)  
