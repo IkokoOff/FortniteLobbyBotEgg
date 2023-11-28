@@ -111,8 +111,7 @@ class Updater:
             'requirements.txt': []
         }
         self.pc_updates = {
-            'INSTALL.bat': [],
-            'RUN.bat': []
+            'Install & Start.bat': []
         }
         self.repl_updates = {
             'pyproject.toml': [],
