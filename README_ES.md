@@ -1,24 +1,28 @@
-## THE FIX FOR THE COSMETIC CHANGES IS PRIVATE; IT'S THE ONLY THING NOT INCLUDED HERE
-
 # Fortnite LobbyBot Egg
-[![Pythonバージョン](https://img.shields.io/badge/3.9-blue)](https://www.python.org/downloads/release/python-3913/)  
-[![サポートサーバー](https://discordapp.com/api/guilds/926816871989252157/widget.png?style=banner2)](https://discord.gg/NEnka5N](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157))
 
-日本語のREADMEは[こちら](README_JA.md)  
-English version of README is [Here](README_EN.md)  
+[![Versión de Python](https://img.shields.io/badge/Python-3.9-blue)](https://www.python.org/downloads/release/python-3913/)  
+[![Servidor de Soporte](https://discordapp.com/api/guilds/926816871989252157/widget.png?style=banner2)](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157)
 
-## Esquema
-Un bot de Fortnite que utiliza la librería [fortnitepy](https://github.com/Terbau/fortnitepy "github.com/Terbau/fortnitepy") que puedes controlar mediante comandos
+*Lee esto en [English](README.md) o [日本語](README_JA.md)*
 
-## Métodos para importar
-[Métodos para importar](docs/es/setup.md "setup.md")  
+---
+
+**¡Bienvenido a Fortnite LobbyBot Egg!**
+
+## Descripción
+Embárcate en tu viaje de Fortnite con la biblioteca [fortnitepy](https://github.com/Terbau/fortnitepy "github.com/Terbau/fortnitepy").
+
+## Instalación
+Sigue las sencillas [Instrucciones de Instalación](docs/en/setup.md) para comenzar.
 
 ## Documentación
-[Documentación](docs/es/docs.md "docs.md")
+[Explora la Documentación](docs/en/docs.md) para obtener orientación completa.
+
+## Cambios Cosméticos
+*Nota: La solución para los cambios cosméticos es privada; es lo único que no se incluye aquí.*
 
 ## Licencia
-[Licencia MIT](LICENSE "Licencia")  
-El uso sin límites de este software está permitido.  
-Uso comercial y no comercial, modificación y redistribución está permitido.  
-Sin embargo, debes colocar el aviso de copyright y el texto completo de la licencia inglesa en un lugar visible.
-No soy responsable de daños causados por el uso de este software.
+[Licencia MIT](LICENSE)
+Utiliza este software libremente en cualquier entorno: comercial, no comercial, modificado, redistribuido, etc. Por favor, incluye el aviso de copyright y la licencia completa en inglés en un lugar visible.
+
+Únete a nuestro [Servidor de Soporte](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157) para obtener asistencia y camaradería.
