@@ -4,8 +4,8 @@ fortnitepy==3.6.9
 jaconv==0.3.4
 jinja2==3.1.2
 pykakasi==2.2.1
-sanic==22.12.0
-tzlocal==4.2
-pytz==2022.7.1
-packaging==23.0
+sanic==23.6.0
+tzlocal==5.2
+pytz==2023.3.post1
+packaging==23.2
 aioconsole==0.6.2
