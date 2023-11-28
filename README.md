@@ -1,6 +1,6 @@
 # Fortnite LobbyBot Egg
 
-[![Python Version](https://img.shields.io/badge/Python-3.9-blue)](https://www.python.org/downloads/release/python-3913/)
+[![Python Version](https://img.shields.io/badge/Python-3.9-blue)](https://www.python.org/downloads/release/python-3913/)  
 [![Support Server](https://discordapp.com/api/guilds/926816871989252157/widget.png?style=banner2)](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157)
 
 *Read this in [Español](README_ES.md) or [日本語](README_JA.md)*
