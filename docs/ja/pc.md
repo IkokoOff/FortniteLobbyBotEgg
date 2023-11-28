@@ -5,11 +5,11 @@
 
 
 ### Pythonのインストール
-まずはPCに[Python 3.7](https://www.python.org/downloads/release/python-379 "python.org")をインストールします  
+まずはPCに[Python 3.9](https://www.python.org/downloads/release/python-3913 "python.org")をインストールします  
 上記のリンクを開いたら、ページ下部にある`Windows x86-64 executable installer`  
 をクリックしてPythonのインストーラーをダウンロードしてください  
 ダウンロードが完了したらダウンロードしたインストーラーを起動してください  
-起動したら`Add Python 3.7 to PATH`にチェックを入れ、`Install Now`をクリックし、インストールが完了するまで待ちます  
+起動したら`Add Python 3.9 to PATH`にチェックを入れ、`Install Now`をクリックし、インストールが完了するまで待ちます  
 
 ![インストーラー](https://user-images.githubusercontent.com/53356872/103261052-5527af00-49e3-11eb-8657-73d7dfd064d5.png)  
 
