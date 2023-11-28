@@ -20,18 +20,16 @@ except ModuleNotFoundError:
     print(f'Python {platform.python_version()}\n')
     print(
         'サードパーティーライブラリの読み込みに失敗しました。INSTALL を実行してください。問題が修正されない場合は\n'
-        'Twitter @gomashio1596\n'
-        'Discord gomashio#9683\n'
+        'Discord: @huguitis\n'
         'こちらか\n'
-        'https://discord.gg/NEnka5N\n'
+        'https://discord.gg/huguitis-nodes1free-hosting-926816871989252157\n'
         'Discordのサーバーまでお願いします'
     )
     print(
-        'Failed to load third party library. Please run INSTALL. If the issue is not resolved, contact me\n'
-        'Twitter @gomashio1596\n'
-        'Discord gomashio#9683\n'
+        'Failed to load third party library. Please install the dependencies\n'
+        'Discord: @huguitis\n'
         'or please join support Discord server\n'
-        'https://discord.gg/NEnka5N'
+        'https://discord.gg/huguitis-nodes1free-hosting-926816871989252157'
     )
     sys.exit(1)
 
@@ -41,19 +39,17 @@ except ModuleNotFoundError:
     print(traceback.format_exc())
     print(f'Python {platform.python_version()}\n')
     print(
-        'モジュールの読み込みに失敗しました。Check Update.bat を実行してください。問題が修正されない場合は\n'
-        'Twitter @gomashio1596\n'
-        'Discord gomashio#9683\n'
+        'モジュールの読み込みに失敗しました。Check Updates を実行してください。問題が修正されない場合は\n'
+        'Discord: @huguitis\n'
         'こちらか\n'
-        'https://discord.gg/NEnka5N\n'
+        'https://discord.gg/huguitis-nodes1free-hosting-926816871989252157\n'
         'Discordのサーバーまでお願いします'
     )
     print(
-        'Failed to module. Please run Check Update.bat. If the issue is not resolved, contact me\n'
-        'Twitter @gomashio1596\n'
-        'Discord gomashio#9683\n'
+        'Failed to module. Please check updates. If the issue is not resolved, contact me\n'
+        'Discord: @huguitis\n'
         'or please join support Discord server\n'
-        'https://discord.gg/NEnka5N'
+        'https://discord.gg/huguitis-nodes1free-hosting-926816871989252157'
     )
     sys.exit(1)
 
