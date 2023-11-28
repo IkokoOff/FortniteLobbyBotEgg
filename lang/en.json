@@ -85,7 +85,7 @@
         "updating": "Checking item data updates...",
         "booting": "Booting bot...",
         "session_id": "Open\nhttps://www.epicgames.com/id/login?redirectUrl=https://www.epicgames.com/id/api/redirect&prompt=login\nAnd login to '{0}' and copy paste text",
-        "authorization_code": "Open\nhttps://epicgames.com/id/logout?lang=en-US&redirectUrl=https%3A%2F%2Fwww.epicgames.com%2Fid%2Flogin%3FredirectUrl%3Dhttps%253A%252F%252Fwww.fortnite.com%252Fid%252Fapi%252Fredirect%253FclientId%253D3446cd72694c4a4485d81b77adbb2141%2526responseType%253Dcode\nAnd login to '{0}' and copy paste text",
+        "authorization_code": "You need to provide an auth for '{0}'\nPlease copy and paste the text in the console.\n\nUse this if you need to login: https://epicgames.com/id/logout?lang=en-US&redirectUrl=https%3A%2F%2Fwww.epicgames.com%2Fid%2Flogin%3FredirectUrl%3Dhttps%253A%252F%252Fwww.fortnite.com%252Fid%252Fapi%252Fredirect%253FclientId%253D3446cd72694c4a4485d81b77adbb2141%2526responseType%253Dcode\n\nUse this if you already logged in: https://www.epicgames.com/id/api/redirect?clientId=3446cd72694c4a4485d81b77adbb2141&responseType=code",
         "confirm_authorization": "Open\n{0}\nAnd login to '{1}' and press 'Confirm' button",
         "account_incorrect": "This account ({0}) is not '{1}'",
         "device_auth_error": "device_auth of '{0}' is invalid. Reboot bot and do authorization again",
