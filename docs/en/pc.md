@@ -4,11 +4,11 @@ Please wait a while...
 ~~[Video]()~~  
 
 ### Install Python
-First, install [Python 3.7](https://www.python.org/downloads/release/python-379 "python.org")  
+First, install [Python 3.9](https://www.python.org/downloads/release/python-3913 "python.org")  
 After opened page, click `Windows x86-64 executable installer`  
 which in bottom of page and download Python installer  
 After downloading, run installer  
-Check the `Add Python 3.7 to PATH` and click `Install Now`, then wait until install will finish  
+Check the `Add Python 3.9 to PATH` and click `Install Now`, then wait until install will finish  
 
 ![Installer](https://user-images.githubusercontent.com/53356872/103261052-5527af00-49e3-11eb-8657-73d7dfd064d5.png)  
 
