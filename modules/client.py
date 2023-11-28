@@ -387,16 +387,14 @@ class Client(fortnitepy.Client):
         'AthenaConsumableEmote': None
     }
     PLATFORM_CONVERTER = {
-        fortnitepy.Platform.PC: "PC",
         fortnitepy.Platform.WINDOWS: "Windows",
         fortnitepy.Platform.MAC: "Mac",
-        fortnitepy.Platform.PLAYSTATION: "PlayStation 4",
+        fortnitepy.Platform.PLAYSTATION: "PlayStation",
+        fortnitepy.Platform.PLAYSTATION_4: "PlayStation 4",
         fortnitepy.Platform.PLAYSTATION_5: "PlayStation 5",
-        fortnitepy.Platform.XBOX: "Xbox One",
-        fortnitepy.Platform.XBOX_X: "Xbox One X",
-        fortnitepy.Platform.XBOX_S: "Xbox One S",
-        fortnitepy.Platform.XBOX_SERIES_X: "Xbox Series X",
-        fortnitepy.Platform.XBOX_SERIES_S: "Xbox Series S",
+        fortnitepy.Platform.XBOX: "Xbox",
+        fortnitepy.Platform.XBOX_ONE: "Xbox One",
+        fortnitepy.Platform.XBOX_X: "Xbox Series X",
         fortnitepy.Platform.SWITCH: "Switch",
         fortnitepy.Platform.IOS: "IOS",
         fortnitepy.Platform.ANDROID: "Android"
