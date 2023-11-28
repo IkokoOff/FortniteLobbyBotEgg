@@ -4,7 +4,7 @@
 [![Pythonバージョン](https://img.shields.io/badge/3.9-blue)](https://www.python.org/downloads/release/python-3913/)  
 [![サポートサーバー](https://discordapp.com/api/guilds/926816871989252157/widget.png?style=banner2)](https://discord.gg/NEnka5N](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157))
 
-English version of README is [Here](README_EN.md)  
+English version of README is [Here](README.md)  
 La versión en español de README está [aquí](README_ES.md)  
 
 ## 概要
