@@ -1,24 +1,25 @@
-## THE FIX FOR THE COSMETIC CHANGES IS PRIVATE; IT'S THE ONLY THING NOT INCLUDED HERE
-
 # Fortnite LobbyBot Egg
-[![Pythonバージョン](https://img.shields.io/badge/3.9-blue)](https://www.python.org/downloads/release/python-3913/)  
-[![サポートサーバー](https://discordapp.com/api/guilds/926816871989252157/widget.png?style=banner2)](https://discord.gg/NEnka5N](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157))
 
-日本語のREADMEは[こちら](README_JA.md)  
-La versión en español de README está [aquí](README_ES.md)  
+[![Python Version](https://img.shields.io/badge/3.9-blue)](https://www.python.org/downloads/release/python-3913/)
+[![Support Server](https://discordapp.com/api/guilds/926816871989252157/widget.png?style=banner2)](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157)
+
+*Read this in [Español](README_ES.md) or [日本語](README_JA.md)*
 
 ## Overview
-A Fortnite lobby bot using library [fortnitepy](https://github.com/Terbau/fortnitepy "github.com/Terbau/fortnitepy")  
+A Fortnite lobby bot using the [fortnitepy](https://github.com/Terbau/fortnitepy "github.com/Terbau/fortnitepy") library.
 
 ## Install
-[Install](docs/en/setup.md "setup.md")  
+[Installation Instructions](docs/en/setup.md)
 
 ## Documentation
-[Documentation](docs/en/docs.md "docs.md")
+[Documentation](docs/en/docs.md)
+
+## Cosmetic Changes
+*Note: The fix for the cosmetic changes is private; it's the only thing not included here.*
 
 ## License
-[MIT license](LICENSE "License")  
-You can use this software unlimited.  
-Commercial, non-commercial, modified, redistributed, etc. are also permitted.  
+[MIT License](LICENSE)
+You can use this software without restrictions.
+Commercial, non-commercial, modified, redistributed, etc., are also permitted.
 However, please place the copyright notice and the full English license in a conspicuous place.
-We are not responsible for any damage caused by using this software.  
+We are not responsible for any damage caused by using this software.
