@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from .bot import Bot
 
 
-__version__ = '1.6'
+__version__ = '1.6.1'
 
 
 class Updater:
@@ -52,7 +52,7 @@ class Updater:
             'modules/auth.py': ['backup'],
             'modules/auto_updater.py': ['backup'],
             'modules/bot.py': ['backup'],
-            'modules/client.py': ['backup'],
+            # 'modules/client.py': ['backup'],
             'modules/colors.py': ['backup'],
             'modules/commands.py': ['backup'],
             'modules/cosmetics.py': ['backup'],
