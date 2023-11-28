@@ -2731,17 +2731,6 @@ class Bot:
                     section = 0
                     if item == 'AthenaDance':
                         section = config['fortnite'][f'{conf}_section']
-                    coro = fortnitepy.EditEntry(
-                        MyClientPartyMember.change_asset,
-                        item,
-                        (self.get_config_item_path(config['fortnite'][conf])
-                         or config['fortnite'][conf]),
-                        variants=variants,
-                        section=section,
-                        keep=False,
-                        name=f'ClientPartyMember.set_{conf}'
-                    )
-                    member_meta.append(coro)
 
                 auth = None
                 if self.use_device_auth and device_auth_details:
