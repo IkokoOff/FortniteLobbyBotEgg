@@ -1,24 +1,28 @@
-## THE FIX FOR THE COSMETIC CHANGES IS PRIVATE; IT'S THE ONLY THING NOT INCLUDED HERE.
-
 # Fortnite LobbyBot Egg
-[![Pythonバージョン](https://img.shields.io/badge/3.9-blue)](https://www.python.org/downloads/release/python-3913/)  
-[![サポートサーバー](https://discordapp.com/api/guilds/926816871989252157/widget.png?style=banner2)](https://discord.gg/NEnka5N](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157))
 
-English version of README is [Here](README.md)  
-La versión en español de README está [aquí](README_ES.md)  
+[![Python バージョン](https://img.shields.io/badge/Python-3.9-blue)](https://www.python.org/downloads/release/python-3913/)  
+[![サポートサーバー](https://discordapp.com/api/guilds/926816871989252157/widget.png?style=banner2)](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157)
+
+*この文章は[Español](README_ES.md)または[Inglés](README.md)で読むことができます*
+
+---
+
+**Fortnite LobbyBot Eggへようこそ！**
 
 ## 概要
-ライブラリ [fortnitepy](https://github.com/Terbau/fortnitepy "github.com/Terbau/fortnitepy") を使用したFortniteのロビーボットです  
+[fortnitepy](https://github.com/Terbau/fortnitepy "github.com/Terbau/fortnitepy") ライブラリを使用したFortniteボット。
 
-## 導入方法
-[導入方法](docs/ja/setup.md "setup.md")  
+## インストール
+簡単な[インストール手順](docs/en/setup.md)に従って始めましょう。
 
-## 解説
-[解説](docs/ja/docs.md "docs.md")
+## ドキュメンテーション
+包括的なガイダンスのために[ドキュメンテーション](docs/en/docs.md)を探索してください。
+
+## 視覚的な変更
+*注意: 視覚的な変更のための修正は非公開です。ここに含まれていない唯一のものです。*
 
 ## ライセンス
-[MITライセンス](LICENSE "ライセンス")  
-このソフトウェアを無制限で使用することができます  
-商用、非商用、改変、再配布なども許可されます  
-ただし、著作権表示と英語のライセンス全文を目に留まる場所に配置してください  
-このソフトウェアの使用によって発生したいかなる損害にも責任を負いません
+[MIT ライセンス](LICENSE)
+商用、非商用、変更、再配布など、どんな環境でも自由にこのソフトウェアを使用できます。著作権表示と完全な英語のライセンステキストを目立つ場所に含めてください。
+
+サポートと仲間意識のために[サポートサーバー](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157)に参加してください。
