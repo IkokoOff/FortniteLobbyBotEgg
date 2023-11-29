@@ -943,7 +943,6 @@ class Bot:
                      'load_failed_json',
                      'config',
                      default=(
-                         "'{0}' ファイルの読み込みに失敗しました。正しく書き込めているか確認してください\n"
                          "Failed to load '{0}' file. Make sure you wrote correctly"
                      )
                  )),
@@ -1011,7 +1010,6 @@ class Bot:
                      'load_failed_json',
                      f'{self.lang_dir}/{lang}',
                      default=(
-                         "'{0}' ファイルの読み込みに失敗しました。正しく書き込めているか確認してください\n"
                          "Failed to load '{0}' file. Make sure you wrote correctly"
                      )
                  )),
@@ -1025,7 +1023,6 @@ class Bot:
                      'load_failed_not_found',
                      f'{self.lang_dir}/{lang}',
                      default=(
-                         "'{0}' ファイルが存在しません\n"
                          "'{0}' file does not exist"
                      )
                  )),
@@ -1044,7 +1041,6 @@ class Bot:
                      'load_failed_json',
                      'commands',
                      default=(
-                         "'{0}' ファイルの読み込みに失敗しました。正しく書き込めているか確認してください\n"
                          "Failed to load '{0}' file. Make sure you wrote correctly"
                      )
                  )),
@@ -1085,7 +1081,6 @@ class Bot:
                      'load_failed_json',
                      'custom_commands',
                      default=(
-                         "'{0}' ファイルの読み込みに失敗しました。正しく書き込めているか確認してください\n"
                          "Failed to load '{0}' file. Make sure you wrote correctly"
                      )
                  )),
@@ -1099,7 +1094,6 @@ class Bot:
                      'load_failed_not_found',
                      'custom_commands',
                      default=(
-                         "'{0}' ファイルが存在しません\n"
                          "'{0}' file does not exist"
                      )
                  )),
@@ -1126,7 +1120,6 @@ class Bot:
                      'load_failed_json',
                      'replies',
                      default=(
-                         "'{0}' ファイルの読み込みに失敗しました。正しく書き込めているか確認してください\n"
                          "Failed to load '{0}' file. Make sure you wrote correctly"
                      )
                  )),
@@ -1140,7 +1133,6 @@ class Bot:
                      'load_failed_not_found',
                      'replies',
                      default=(
-                         "'{0}' ファイルが存在しません\n"
                          "'{0}' file does not exist"
                      )
                  )),
@@ -1208,7 +1200,6 @@ class Bot:
                     'is_missing',
                     f'{prefix}{key}',
                     default=(
-                        "{0} がありません\n"
                         "{0} is missing"
                     )
                 ),
@@ -1276,7 +1267,6 @@ class Bot:
                             expected,
                             provided,
                             default=(
-                                "'{0}' 型が一致しません(予想: '{1}' 実際: '{2}')\n"
                                 "'{0}' type mismatch(Expected: '{1}' Provided: '{2}')\n"
                             )
                         ),
@@ -1292,7 +1282,6 @@ class Bot:
                             provided,
                             eval(f'data{key}'),
                             default=(
-                                "'{0}' 型が一致しません(予想: '{1}' 実際: '{2}') -> 修正されました: '{3}'\n"
                                 "'{0}' type mismatch(Expected: '{1}' Provided: '{2}') -> Fixed to: '{3}'\n"
                             )
                         ),
@@ -1336,7 +1325,6 @@ class Bot:
                                 value,
                                 values,
                                 default=(
-                                    "'{0}' '{1}' は {2} のどれにも一致しません\n"
                                     "'{0}' '{1}' don't match to any of {2}\n"
                                 )
                             ),
@@ -1364,7 +1352,6 @@ class Bot:
                                     value,
                                     values,
                                     default=(
-                                        "'{0}' '{1}' は {2} のどれにも一致しません\n"
                                         "'{0}' '{1}' don't match to any of {2}\n"
                                     )
                                 ),
@@ -1391,7 +1378,6 @@ class Bot:
                                     value,
                                     func_str,
                                     default=(
-                                        "{0} '{1}' はチェック '{2}' に一致しません\n"
                                         "{0} '{1}' don't match to check '{2}'\n"
                                     )
                                 ),
@@ -1589,7 +1575,6 @@ class Bot:
                     'error_keys',
                     '\n'.join(self.error_config),
                     default=(
-                        "以下のキーに問題がありました\n{0}\n"
                         "There was an error on these keys\n{0}\n"
                     )
                 ),
@@ -1618,7 +1603,6 @@ class Bot:
                     'error_keys',
                     '\n'.join(self.error_commands),
                     default=(
-                        "以下のキーに問題がありました\n{0}\n"
                         "There was an error on keys\n{0}\n"
                     )
                 ),
@@ -1634,7 +1618,6 @@ class Bot:
                     'error_keys',
                     '\n'.join(self.error_custom_commands),
                     default=(
-                        "以下のキーに問題がありました\n{0}\n"
                         "There was an error on keys\n{0}\n"
                     )
                 ),
@@ -1650,7 +1633,6 @@ class Bot:
                     'error_keys',
                     '\n'.join(self.error_replies),
                     default=(
-                        "以下のキーに問題がありました\n{0}\n"
                         "There was an error on keys\n{0}\n"
                     )
                 ),
@@ -1693,7 +1675,6 @@ class Bot:
                 self.l(
                     'load_success',
                     default=(
-                        "正常に読み込みが完了しました\n"
                         "Loading successfully finished\n"
                     )
                 ),
@@ -1704,7 +1685,6 @@ class Bot:
                 self.l(
                     'load_failed_web',
                     default=(
-                        "正常に読み込みが完了しませんでした。ファイルを直接修正するか、Webから修正してください\n"
                         "Loading didn't finish successfully. Please fix files directly or fix from web\n"
                     )
                 ),
@@ -1715,7 +1695,6 @@ class Bot:
                 self.l(
                     'load_failed',
                     default=(
-                        "正常に読み込みが完了しませんでした。ファイルを修正してください\n"
                         "Loading didn't finish successfully. Please fix files\n"
                     )
                 ),
