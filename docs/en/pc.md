@@ -38,7 +38,7 @@ Click `Finish`
 Open [Fortnite LobbyBot repository](https://github.com/Huguitis/FortniteLobbyBotEgg "github.com") and press `Code` button, then press `Download Zip`  
 After downloading, unzip file (I won't explain how to unzip)  
 After unzipping, place files inside zip to somewhere  
-RUN INSTALL file inside folder (This won't need to do except first time and update)  
+Run **python index.py -use-device-auth -use-authorization-code** (This won't need to do except first time and update)  
 
 ![Files](https://user-images.githubusercontent.com/53356872/104012669-91cd8480-51f3-11eb-9ae6-8dba0e75b927.png)  
 
