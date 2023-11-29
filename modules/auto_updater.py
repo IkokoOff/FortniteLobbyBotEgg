@@ -154,7 +154,7 @@ class Updater:
         filename = path.split('/')[-1]
         key = '.'.join(filename.split('.')[:-1])
         extension = filename.split('.')[-1]
-        tags = self.updates.get(path, self.pc_updates.get(path, self.repl_updates.get(path)))
+        tags = self.updates.get(path, self.pc_updates.get(path))
         save = save or path
         is_image = (
             True
