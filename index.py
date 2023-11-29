@@ -64,16 +64,7 @@ else:
         asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 
 if __name__ == '__main__':
-    if (os.getenv('PROJECT_DOMAIN') is not None
-            and os.getcwd().startswith('/app')
-            and sys.platform == 'linux'):
-        mode = 'glitch'
-    elif (os.getenv('REPLIT_DB_URL') is not None
-            and os.getcwd().startswith('/home/runner')
-            and sys.platform == 'linux'):
-        mode = 'repl'
-    else:
-        mode = 'pc'
+    mode = 'pc'
 
     print(modules.colors.green(
         f'V{modules.__version__}\n'
