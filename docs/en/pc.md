@@ -1,7 +1,5 @@
 ## Procedure until the first startup in PC
 **I'll explain with the premise that OS is Windows**  
-Please wait a while...  
-~~[Video]()~~  
 
 ### Install Python
 First, install [Python 3.9](https://www.python.org/downloads/release/python-3913 "python.org")  
@@ -36,15 +34,15 @@ If you don't use git just click `Next` * 9, then `Install`
 Click `Finish`  
 ![Installer](https://user-images.githubusercontent.com/53356872/104095506-86a15400-52da-11eb-8545-8a089c29a714.png)  
 
-### Boot Fortnite-LobbyBot-v2
-Open [Fortnite-LobbyBot-v2 repository](https://github.com/gomashio1596/Fortnite-LobbyBot-v2 "github.com") and press `Code` button, then press `Download Zip`  
+### Boot Fortnite LobbyBot
+Open [Fortnite LobbyBot repository](https://github.com/Huguitis/FortniteLobbyBotEgg "github.com") and press `Code` button, then press `Download Zip`  
 After downloading, unzip file (I won't explain how to unzip)  
 After unzipping, place files inside zip to somewhere  
-RUN INSTALL file inside folder (This won't need to do except first time and update)  
+Run **python index.py -use-device-auth -use-authorization-code** (This won't need to do except first time and update)  
 
 ![Files](https://user-images.githubusercontent.com/53356872/104012669-91cd8480-51f3-11eb-9ae6-8dba0e75b927.png)  
 
-After installing, close window and run RUN (If there was an error, check Python version)  
+After installing, close window and run the bot with **python index.py -use-device-auth -use-authorization-code** (If there was an error, check Python version)  
 In here we call black screen 'Log' or 'Console'  
 If `Web server running on 'XXX'` message will shows up boot has finished  
 Proceed to bot's [setup](setup.md#Procedure-to-setup "setup.md")  

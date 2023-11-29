@@ -1,7 +1,5 @@
 ## PCでのボットの初回起動までの手順
 **OSはWindowsだという前提で解説します**  
-しばらくお待ちください....  
-~~[動画での解説]()~~  
 
 
 ### Pythonのインストール
@@ -39,14 +37,14 @@ gitを使わないならそのまま`Next` * 9, `Install`
 ![インストーラー](https://user-images.githubusercontent.com/53356872/104095506-86a15400-52da-11eb-8545-8a089c29a714.png)  
 
 ### Fortnite-LobbyBot-v2のセットアップ
-Github上の[Fortnite-LobbyBot-v2のリポジトリ](https://github.com/gomashio1596/Fortnite-LobbyBot-v2 "github.com")を開き、`Code`ボタンを押して`Download Zip`を押します  
+Github上の[Fortnite LobbyBotのリポジトリ](https://github.com/Huguitis/FortniteLobbyBotEgg "github.com")を開き、`Code`ボタンを押して`Download Zip`を押します  
 zipファイルのダウンロードが終わったら、そのファイルを解凍してください (解凍方法については解説しません)  
 解凍したら中のファイルをPC上の適当な場所に配置してください  
-中にあるINSTALLを実行してください (これは初回とアップデート時以外は実行する必要はありません)  
+中にある**python index.py -use-device-auth -use-authorization-code**を実行してください (これは初回とアップデート時以外は実行する必要はありません)  
 
 ![ファイル](https://user-images.githubusercontent.com/53356872/104012669-91cd8480-51f3-11eb-9ae6-8dba0e75b927.png)  
 
-インストールが終わったら画面を閉じ、RUNを実行してください (エラーが出た場合はPythonのバージョンなどが間違っている可能性があります)  
+インストールが終わったら画面を閉じ、**python index.py -use-device-auth -use-authorization-code**を実行してください (エラーが出た場合はPythonのバージョンなどが間違っている可能性があります)  
 RUNを実行して出てきた画面をログやコンソールと呼びます  
 `Webサーバーが 'XXX' で起動中です`の表示が出たら起動完了です  
 ボットの[セットアップ](setup.md#セットアップの手順 "setup.md")に進んでください  

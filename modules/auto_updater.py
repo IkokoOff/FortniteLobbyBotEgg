@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from .bot import Bot
 
 
-__version__ = '1.6.1'
+__version__ = '1.6.1.1'
 
 
 class Updater:
@@ -30,9 +30,17 @@ class Updater:
             'docs/en/docs.md': [],
             'docs/en/glossary.md': [],
             'docs/en/pc.md': [],
-            'docs/en/repl.md': [],
             'docs/en/replies.md': [],
             'docs/en/setup.md': [],
+
+            'docs/es/commands.md': [],
+            'docs/es/config.md': [],
+            'docs/es/custom_commands.md': [],
+            'docs/es/docs.md': [],
+            'docs/es/glossary.md': [],
+            'docs/es/pc.md': [],
+            'docs/es/replies.md': [],
+            'docs/es/setup.md': [],
 
             'docs/ja/commands.md': [],
             'docs/ja/config.md': [],
@@ -40,7 +48,6 @@ class Updater:
             'docs/ja/docs.md': [],
             'docs/ja/glossary.md': [],
             'docs/ja/pc.md': [],
-            'docs/ja/repl.md': [],
             'docs/ja/replies.md': [],
             'docs/ja/setup.md': [],
 
@@ -105,18 +112,13 @@ class Updater:
             'index.py': ['backup'],
             'LICENSE': [],
             'README.md': [],
-            'README_EN.md': [],
+            'README_JA.md': [],
             'README_ES.md': [],
             'replies.json': ['diff', 'db', 'backup'],
             'requirements.txt': []
         }
         self.pc_updates = {
             'Install & Start.bat': []
-        }
-        self.repl_updates = {
-            'pyproject.toml': [],
-            '.replit': [],
-            'replit.nix': []
         }
 
     def l(self, key: str, *args: tuple, default: Optional[str] = '', **kwargs: dict) -> LocalizedText:
@@ -172,7 +174,6 @@ class Updater:
                             'backup_failed',
                             path,
                             default=(
-                                "'{0}' のバックアップに失敗しました\n"
                                 "Failed backup for '{0}'"
                             )
                         ),
@@ -184,7 +185,6 @@ class Updater:
                 'checking_update',
                 path,
                 default=(
-                    "'{0}' のアップデートを確認中...\n"
                     "Checking update for '{0}'..."
                 )
             ),
@@ -218,7 +218,6 @@ class Updater:
                         'file_not_found',
                         path,
                         default=(
-                            "'{0}' ファイルが存在しません\n"
                             "File '{0}' doesn't exists"
                         )
                     ),
@@ -235,7 +234,6 @@ class Updater:
                         tries,
                         retry,
                         default=(
-                            "'{0}' のデータの取得に失敗しました。{1}秒後に再試行します {2}/{3}\n"
                             "Failed to get data for '{0}'. Retry after {1} seconds {2}/{3}"
                         )
                     ),
@@ -259,7 +257,6 @@ class Updater:
                                     'update_detected',
                                     path,
                                     default=(
-                                        "'{0}' のアップデートを確認しました\n"
                                         "Detected update for '{0}'"
                                     )
                                 ),
@@ -281,7 +278,6 @@ class Updater:
                                     'update_detected',
                                     path,
                                     default=(
-                                        "'{0}' のアップデートを確認しました\n"
                                         "Detected update for '{0}'"
                                     )
                                 ),
@@ -313,7 +309,6 @@ class Updater:
                                 'update_detected',
                                 path,
                                 default=(
-                                    "'{0}' のアップデートを確認しました\n"
                                     "Detected update for '{0}'"
                                 )
                             ),
@@ -347,7 +342,6 @@ class Updater:
                     'new_version',
                     var['__version__'],
                     default=(
-                        "アップデートを確認しました。バージョン: {0}\n"
                         "Update detected. Version: {0}"
                     )
                 ),
@@ -359,7 +353,6 @@ class Updater:
                     'update_finish',
                     var['__version__'],
                     default=(
-                        "バージョン{0}へのアップデートが完了しました\n"
                         "Successfully updated to version {0}"
                     )
                 ),
@@ -377,10 +370,5 @@ class Updater:
             tasks.extend([
                 self.bot.loop.create_task(self.check_update(uri, path))
                 for path in self.pc_updates.keys()
-            ])
-        elif self.bot.mode == 'repl':
-            tasks.extend([
-                self.bot.loop.create_task(self.check_update(uri, path))
-                for path in self.repl_updates.keys()
             ])
         await asyncio.wait(tasks)
