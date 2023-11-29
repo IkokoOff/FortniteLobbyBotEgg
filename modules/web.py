@@ -116,10 +116,10 @@ async def login(request: Request, *args: Any, **kwargs: Any) -> HTTPResponse:
 @auth.login_required
 async def readme(request: Request) -> HTTPResponse:
     app = request.app
-    if app.ctx.bot.config['lang'] == 'ja':
+    if app.ctx.bot.config['lang'] == 'en':
         return await res.file('README.md')
-    elif app.ctx.bot.config['lang'] == 'en':
-        return await res.file('README_EN.md')
+    elif app.ctx.bot.config['lang'] == 'ja':
+        return await res.file('README_JA.md')
     elif app.ctx.bot.config['lang'] == 'es':
         return await res.file('README_ES.md')
     exc.abort(404)
