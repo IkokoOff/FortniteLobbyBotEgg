@@ -81,8 +81,8 @@ class MyAdvancedAuth(fortnitepy.Auth):
             try:
                 data = await self.run_refresh_token_authenticate()
             except fortnitepy.HTTPException as e:
-                m = 'errors.com.epicgames.account.auth_token.invalid_refresh_token'
-                if e.message_code != m:
+                invalid_refresh_token_message_code = 'errors.com.epicgames.account.auth_token.invalid_refresh_token'
+                if e.message_code != invalid_refresh_token_message_code:
                     raise
         if data is None and self.session_id_ready():
             data = await self.run_session_id_authenticate()
@@ -122,24 +122,6 @@ class MyAdvancedAuth(fortnitepy.Auth):
 
 
 class DeviceCodeAuth(fortnitepy.Auth):
-    """Authenticates with device code.
-
-    Parameters
-    ----------
-    timeout: Optional[]:class:`int`]
-        How many seconds to wait for before user complete device code authorization.
-        *Defaults to ``60``*
-    switch_token: Optional[:class:`str`]
-        The switch token to use with authentication. You should generally
-        not need to set this manually.
-    ios_token: Optional[:class:`str`]
-        The ios token to use with authentication. You should generally
-        not need to set this manually.
-    fortnite_token: Optional[:class:`str`]
-        The fortnite token to use with authentication. You should generally
-        not need to set this manually.
-    """
-
     def __init__(self, timeout: Optional[int] = 60, **kwargs: Any) -> None:
         super().__init__(**kwargs)
         self.switch_token = kwargs.get('switch_token', 'OThmN2U0MmMyZTNhNGY4NmE3NGViNDNmYmI0MWVkMzk6MGEyNDQ5YTItMDAxYS00NTFlLWFmZWMtM2U4MTI5MDFjNGQ3')
@@ -210,8 +192,8 @@ class DeviceCodeAuth(fortnitepy.Auth):
                     priority=priority
                 )
             except fortnitepy.HTTPException as e:
-                m = 'errors.com.epicgames.account.oauth.authorization_pending'
-                if e.message_code != m:
+                authorization_pending_message_code = 'errors.com.epicgames.account.oauth.authorization_pending'
+                if e.message_code != authorization_pending_message_code:
                     raise
             await asyncio.sleep(3)
 
@@ -290,8 +272,8 @@ class SessionIDAuth(fortnitepy.ExchangeCodeAuth):
         try:
             await self.set_session_id(self.resolved_code)
         except fortnitepy.HTTPException as e:
-            m = 'errors.com.epicgames.accountportal.session_id_invalid'
-            if e.message_code == m:
+            session_id_invalid_message_code = 'errors.com.epicgames.accountportal.session_id_invalid'
+            if e.message_code == session_id_invalid_message_code:
                 raise fortnitepy.AuthException(
                     'Invalid session id supplied',
                     e
