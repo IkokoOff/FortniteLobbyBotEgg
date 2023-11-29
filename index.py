@@ -19,16 +19,9 @@ except ModuleNotFoundError:
     print(traceback.format_exc())
     print(f'Python {platform.python_version()}\n')
     print(
-        'サードパーティーライブラリの読み込みに失敗しました。INSTALL を実行してください。問題が修正されない場合は\n'
-        'Discord: @huguitis\n'
-        'こちらか\n'
-        'https://discord.gg/huguitis-nodes1free-hosting-926816871989252157\n'
-        'Discordのサーバーまでお願いします'
-    )
-    print(
         'Failed to load third party library. Please install the dependencies\n'
         'Discord: @huguitis\n'
-        'or please join support Discord server\n'
+        'Or please join support Discord server\n'
         'https://discord.gg/huguitis-nodes1free-hosting-926816871989252157'
     )
     sys.exit(1)
@@ -39,16 +32,9 @@ except ModuleNotFoundError:
     print(traceback.format_exc())
     print(f'Python {platform.python_version()}\n')
     print(
-        'モジュールの読み込みに失敗しました。Check Updates を実行してください。問題が修正されない場合は\n'
+        'Failed to load third party library. Please install the dependencies\n'
         'Discord: @huguitis\n'
-        'こちらか\n'
-        'https://discord.gg/huguitis-nodes1free-hosting-926816871989252157\n'
-        'Discordのサーバーまでお願いします'
-    )
-    print(
-        'Failed to module. Please check updates. If the issue is not resolved, contact me\n'
-        'Discord: @huguitis\n'
-        'or please join support Discord server\n'
+        'Or please join support Discord server\n'
         'https://discord.gg/huguitis-nodes1free-hosting-926816871989252157'
     )
     sys.exit(1)
