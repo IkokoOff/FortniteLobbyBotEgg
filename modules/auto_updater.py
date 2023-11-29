@@ -30,9 +30,17 @@ class Updater:
             'docs/en/docs.md': [],
             'docs/en/glossary.md': [],
             'docs/en/pc.md': [],
-            'docs/en/repl.md': [],
             'docs/en/replies.md': [],
             'docs/en/setup.md': [],
+
+            'docs/es/commands.md': [],
+            'docs/es/config.md': [],
+            'docs/es/custom_commands.md': [],
+            'docs/es/docs.md': [],
+            'docs/es/glossary.md': [],
+            'docs/es/pc.md': [],
+            'docs/es/replies.md': [],
+            'docs/es/setup.md': [],
 
             'docs/ja/commands.md': [],
             'docs/ja/config.md': [],
@@ -40,7 +48,6 @@ class Updater:
             'docs/ja/docs.md': [],
             'docs/ja/glossary.md': [],
             'docs/ja/pc.md': [],
-            'docs/ja/repl.md': [],
             'docs/ja/replies.md': [],
             'docs/ja/setup.md': [],
 
