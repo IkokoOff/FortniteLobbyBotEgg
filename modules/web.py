@@ -131,7 +131,7 @@ async def openfile(request: Request, filename: str) -> HTTPResponse:
     app = request.app
     files = [
         'README.md',
-        'README_EN.md',
+        'README_JA.md',
         'README_ES.md',
         'LICENSE'
     ]
@@ -202,7 +202,7 @@ async def openfile_docs(request: Request, lang: str, filename: str) -> HTTPRespo
 async def file_openfile(request: Request, filename: str) -> HTTPResponse:
     files = [
         'README.md',
-        'README_EN.md',
+        'README_JA.md',
         'README_ES.md',
         'LICENSE'
     ]
