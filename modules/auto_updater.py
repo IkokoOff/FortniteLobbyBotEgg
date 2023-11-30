@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from .bot import Bot
 
 
-__version__ = '1.6.1.2'
+__version__ = '1.6.1.3'
 
 
 class Updater:
@@ -342,7 +342,8 @@ class Updater:
                     'new_version',
                     var['__version__'],
                     default=(
-                        "Update detected. Version: {0}"
+                        "Update detected. Version: {0}",
+                        "PLEASE WAIT, THIS CAN TAKE UP TO 5 MINUTES"
                     )
                 ),
                 add_p=self.bot.time
