@@ -54,32 +54,19 @@ class MyClientPartyMember(fortnitepy.ClientPartyMember):
         'AthenaConsumableEmote': None
     }
     ASSET_PATH_CONVERTER = {
-        'AthenaCharacter': ("AthenaCharacterItemDefinition'/Game/Athena/Items/"
-                            "Cosmetics/Characters/{0}.{0}'"),
-        'AthenaBackpack': ("AthenaBackpackItemDefinition'/Game/Athena/Items/"
-                           "Cosmetics/Backpacks/{0}.{0}'"),
-        'AthenaPet': ("AthenaPetItemDefinition'/Game/Athena/Items/"
-                      "Cosmetics/Pets/{0}.{0}'"),
-        'AthenaPetCarrier': ("AthenaPetCarrierItemDefinition'/Game/Athena/Items/"
-                             "Cosmetics/PetCarriers/{0}.{0}'"),
-        'AthenaPickaxe': ("AthenaPickaxeItemDefinition'/Game/Athena/Items/"
-                          "Cosmetics/Pickaxes/{0}.{0}'"),
-        'AthenaDance': ("AthenaDanceItemDefinition'/Game/Athena/Items/"
-                        "Cosmetics/Dances/{0}.{0}'"),
-        'AthenaEmoji': ("AthenaDanceItemDefinition'/Game/Athena/Items/"
-                        "Cosmetics/Dances/Emoji/{0}.{0}'"),
-        'AthenaToy': ("AthenaToyItemDefinition'/Game/Athena/Items/"
-                      "Cosmetics/Toys/{0}.{0}'"),
-        'AthenaConsumableEmote': ("AthenaConsumableEmoteItemDefinition'/Game/Athena/Items/"
-                                  "Cosmetics/ConsumableEmotes/{0}.{0}"),
-        'HolidayCracker': ("AthenaDanceItemDefinition'/Game/Athena/Items/"
-                           "Cosmetics/Dances/HolidayCracker/{0}.{0}'"),
-        'PapayaComms': ("AthenaDanceItemDefinition'/Game/Athena/Items/"
-                        "Cosmetics/Dances/PapayaComms/{0}.{0}'"),
-        'Chugga': ("AthenaDanceItemDefinition'/Game/Athena/Items/"
-                   "Cosmetics/Dances/Chugga/{0}.{0}'"),
-        'PatPat': ("AthenaDanceItemDefinition'/Game/Athena/Items/"
-                   "Cosmetics/Dances/PatPat/{0}.{0}'")
+        'AthenaCharacter': "{0}",
+        'AthenaBackpack': "FortniteGame/Plugins/GameFeatures/BRCosmetics/Content/Athena/Items/Cosmetics/Backpacks/{0}.{0}",
+        'AthenaPet': "FortniteGame/Plugins/GameFeatures/BRCosmetics/Content/Athena/Items/Cosmetics/Backpacks/{0}.{0}",
+        'AthenaPetCarrier': "FortniteGame/Plugins/GameFeatures/BRCosmetics/Content/Athena/Items/Cosmetics/Backpacks/{0}.{0}",
+        'AthenaPickaxe': "FortniteGame/Plugins/GameFeatures/BRCosmetics/Content/Athena/Items/Cosmetics/PickAxes/{0}.{0}",
+        'AthenaDance': "FortniteGame/Content/Athena/Items/Cosmetics/Dances/{0}.{0}",
+        'AthenaEmoji': "FortniteGame/Plugins/GameFeatures/BRCosmetics/Content/Athena/Items/Cosmetics/Dances/Emoji/{0}.{0}",
+        'AthenaToy': "FortniteGame/Plugins/GameFeatures/BRCosmetics/Content/Athena/Items/Cosmetics/Toys/{0}.{0}",
+        'AthenaConsumableEmote': "FortniteGame/Content/Athena/Items/Cosmetics/Dances/{0}.{0}",
+        'HolidayCracker': "FortniteGame/Content/Athena/Items/Cosmetics/Dances/HolidayCracker/{0}.{0}'",
+        'PapayaComms': "FortniteGame/Content/Athena/Items/Cosmetics/Dances/PapayaComms/{0}.{0}'",
+        'Chugga': "FortniteGame/Content/Athena/Items/Cosmetics/Dances/Chugga/{0}.{0}'",
+        'PatPat': "FortniteGame/Content/Athena/Items/Cosmetics/Dances/PatPat/{0}.{0}'"
     }
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
@@ -99,17 +86,15 @@ class MyClientPartyMember(fortnitepy.ClientPartyMember):
     @classmethod
     def get_asset_path(cls, item: str, asset: Optional[str] = None) -> str:
         if asset is not None:
-            if asset != '' and '.' not in asset:
-                if item == 'AthenaDance':
-                    if asset.lower().startswith('eid_holidaycracker'):
-                        item = 'HolidayCracker'
-                    elif asset.lower().endswith('papayacomms'):
-                        item = 'PapayaComms'
-                    elif  asset.lower().startswith('eid_chugga'):
-                        item = 'Chugga'
-                    elif  asset.lower().startswith('eid_patpat'):
-                        item = 'PatPat'
-                asset = cls.ASSET_PATH_CONVERTER[item].format(asset)
+            # Transforma la ruta de la API al formato esperado por fortnitepy
+            formatted_asset = cls.ASSET_PATH_CONVERTER[item].format(asset)
+            if 'FortniteGame/Content' in formatted_asset:
+                formatted_asset = formatted_asset.replace('FortniteGame/Content', '/Game')
+            if 'FortniteGame/Plugins/GameFeatures/BRCosmetics/Content' in formatted_asset:
+                formatted_asset = formatted_asset.replace('FortniteGame/Plugins/GameFeatures/BRCosmetics/Content', '/BRCosmetics')
+            # Asume que la ruta final no debe contener el último segmento (el nombre del archivo)
+            formatted_asset = '/'.join(formatted_asset.split('/')[:-1])
+            return formatted_asset
         return asset
 
     def asset(self, item: str) -> Optional[str]:
@@ -142,6 +127,8 @@ class MyClientPartyMember(fortnitepy.ClientPartyMember):
         kwargs['section'] = kwargs.get('section')
 
         func = self.ASSET_FUNCTION_CONVERTER[item]
+        if asset is not None and asset != '' and '.' not in asset:
+            asset = f"AthenaCharacter:{asset}"
         if item in ['AthenaCharacter', 'AthenaBackpack', 'AthenaPet', 'AthenaPetCarrier']:  # outfit and backpack
             keys = ['run_for', 'section']
             for key in keys:
